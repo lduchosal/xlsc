@@ -1,0 +1,11 @@
+[package]
+name = "xlsc"
+version = "0.1.0"
+authors = ["lduchosal <luc+github@2113.ch>"]
+edition = "2018"
+
+[dependencies]
+base64 = "0.10.0"
+rust-crypto = "0.2.36"
+encoding = "0.2.33"
+threadpool = "1.7.1"
