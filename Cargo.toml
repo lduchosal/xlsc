@@ -1,7 +1,7 @@
 [package]
 name = "xlsc"
 version = "0.1.0"
-authors = ["lduchosal <luc+github@2113.ch>"]
+authors = ["q"]
 edition = "2018"
 
 [dependencies]
