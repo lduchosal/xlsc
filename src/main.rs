@@ -4,7 +4,6 @@ extern crate crypto;
 
 use threadpool::ThreadPool;
 
-use std::ops::Add;
 use encoding::Encoding;
 use encoding::EncoderTrap;
 use encoding::all::UTF_16LE;
@@ -13,26 +12,22 @@ use crypto::sha2::Sha512;
 
 fn main() {
 
-    println!("1. ");
     let expected1 = "lw4vwffwk1PyCatLr/dRSvQnsYWbovd81V05EPQkPZGNnJfSHL6jHc+izkBKzCQdu3ydCOGUThKaiECC8X2P4w==";
     let salt1 = "px+fnZAl1LuN/O5A9Frbyw==";
-    let pass1 = "kico";
-    check(expected1, salt1, pass1);
+
     multi_check(expected1, salt1);
 
     // println!("2. ");
 
     // let expected2 = "ZudeQE349BZr76+cC6ahrW3aE3qRuGXshx5fQGcsJZwwnT/UmJ/dD8KAgHNWNaervWHUgxUuqnpGfarPmZLbjw==";
     // let salt2 =  "DgV8Sq/t9Enui/mvABSBQQ==";
-    // let pass2 = "kico";
-    // check(expected2, salt2, pass2);
+    // multi_check(expected2, salt2);
 
     // println!("3. ");
 
     // let expected3 = "x4q/XWKVegiNVCwgA1oepOzTMICCgRj/q6Akik873zP6ljPdvlRyNPbHv0jxxLHrhTBv1Nl4+I8PQ01CwapgJA==";
     // let salt3 =  "S5DcDfj4deWv1ABTpY1aGQ==";
-    // let pass3 = "kico";
-    // check(expected3, salt3, pass3);
+    // multi_check(expected3, salt3);
 
 }
 
@@ -73,11 +68,6 @@ fn multi_check(expected: &'static str, salt: &'static str) {
             }
         });
 
-        // let succeed = check(expected, salt, pass.as_ref());
-
-        // if succeed {
-        //     return;
-        // }
     }}}}
 
     pool.join();
